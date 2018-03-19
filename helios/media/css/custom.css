@@ -1,8 +1,12 @@
 .top-bar {
-	background-color:#339933;	
+	background-color:#1659bf;	
 	background-image:url('/media/img/logo.png');
 	background-repeat:no-repeat;
+	background-size:contain;
 	min-height:80px;
+
+	border:0 !important;
+	border-radius:0 !important;
 }
 #banner {
 	background:#4C9900;

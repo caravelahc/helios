@@ -24,7 +24,7 @@ TEMPLATE_DEBUG = DEBUG
 #This validation only applies via get_host(); if your code accesses the Host header directly from request.META you are bypassing this security protection.
 #More info: https://docs.djangoproject.com/en/1.7/ref/settings/#allowed-hosts
 
-ALLOWED_HOSTS = ['sp-helios.cafeexpresso.rnp.br'] # set a value for production environment, alongside with debug set to false
+ALLOWED_HOSTS = ['e-democracia.ufsc.br'] # set a value for production environment, alongside with debug set to false
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = get_from_env('SECRET_KEY', 'replaceme')
@@ -200,9 +200,9 @@ VOTER_UPLOAD_REL_PATH = "voters/%Y/%m/%d"
 
 
 # Change your email settings
-DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', 'helios.ifsc@gmail.com')
+DEFAULT_FROM_EMAIL = 'eleicao.ctc@sistemas.ufsc.br'
 #DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', _('IFSC E-Voting System'))
-DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', 'Sistema de Votação do IFSC')
+DEFAULT_FROM_NAME = 'Sistema de Eleição do CTC'
 SERVER_EMAIL = '%s <%s>' % (DEFAULT_FROM_NAME, DEFAULT_FROM_EMAIL)
 
 LOGIN_URL = '/auth/'
@@ -210,12 +210,12 @@ LOGOUT_ON_CONFIRMATION = True
 
 # The two hosts are here so the main site can be over plain HTTP
 # while the voting URLs are served over SSL.
-URL_HOST = get_from_env("URL_HOST", "http://localhost:8000").rstrip("/")
+URL_HOST = get_from_env("URL_HOST", "http://e-democracia.ufsc.br").rstrip("/")
 
 # IMPORTANT: you should not change this setting once you've created
 # elections, as your elections' cast_url will then be incorrect.
 # SECURE_URL_HOST = "https://localhost:8443"
-SECURE_URL_HOST = get_from_env("SECURE_URL_HOST", URL_HOST).rstrip("/")
+SECURE_URL_HOST = get_from_env("SECURE_URL_HOST", 'https://e-democracia.ufsc.br').rstrip("/")
 
 # this additional host is used to iframe-isolate the social buttons,
 # which usually involve hooking in remote JavaScript, which could be
@@ -224,17 +224,17 @@ SECURE_URL_HOST = get_from_env("SECURE_URL_HOST", URL_HOST).rstrip("/")
 SOCIALBUTTONS_URL_HOST= get_from_env("SOCIALBUTTONS_URL_HOST", SECURE_URL_HOST).rstrip("/")
 
 # election stuff
-SITE_TITLE = get_from_env('SITE_TITLE', _('IFSC E-Voting System'))
-MAIN_LOGO_URL = get_from_env('MAIN_LOGO_URL', '/static/logo.png')
+SITE_TITLE = get_from_env('SITE_TITLE', _('UFSC E-Voting System'))
+MAIN_LOGO_URL = get_from_env('MAIN_LOGO_URL', '/static/logo.svg')
 ALLOW_ELECTION_INFO_URL = (get_from_env('ALLOW_ELECTION_INFO_URL', '0') == '1')
 
 # FOOTER links
 FOOTER_LINKS = json.loads(get_from_env('FOOTER_LINKS', '[]'))
 FOOTER_LOGO_URL = get_from_env('FOOTER_LOGO_URL', None)
 
-WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', _('Welcome to IFSC E-Voting System'))
+WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', _('Welcome to UFSC E-Voting System'))
 
-HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'shirlei@gmail.com')
+HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'eleicao.ctc@sistemas.ufsc.br')
 
 AUTH_TEMPLATE_BASE = "server_ui/templates/base.html"
 HELIOS_TEMPLATE_BASE = "server_ui/templates/base.html"
@@ -247,7 +247,7 @@ HELIOS_PRIVATE_DEFAULT = False
 
 # authentication systems enabled
 #AUTH_ENABLED_AUTH_SYSTEMS = ['password','facebook','twitter', 'google', 'yahoo']
-AUTH_ENABLED_AUTH_SYSTEMS = get_from_env('AUTH_ENABLED_AUTH_SYSTEMS', 'shibboleth').split(",")
+AUTH_ENABLED_AUTH_SYSTEMS = get_from_env('AUTH_ENABLED_AUTH_SYSTEMS', 'password').split(",")
 AUTH_DEFAULT_AUTH_SYSTEM = get_from_env('AUTH_DEFAULT_AUTH_SYSTEM', None)
 
 # google
@@ -312,7 +312,7 @@ djcelery.setup_loader()
 
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
-CELERY_TASK_RESULT_EXPIRES = 5184000 # 60 days
+CELERY_TASK_RESULT_EXPIRES = 60 * 24 * 60 * 60 # 60 days
 # for testing
 TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
 # this effectively does CELERY_ALWAYS_EAGER = True
