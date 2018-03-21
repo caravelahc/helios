@@ -274,8 +274,10 @@ LINKEDIN_API_SECRET = ''
 
 # CAS (for universities)
 CAS_SERVER_URL = 'https://sistemas.ufsc.br/'
+CAS_STORE_NEXT = True
 CAS_USERNAME_ATTRIBUTE = 'idPessoa'
 CAS_VERSION = 'CAS_2_SAML_1_0'
+
 
 # Clever
 CLEVER_CLIENT_ID = get_from_env('CLEVER_CLIENT_ID', "")

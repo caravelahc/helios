@@ -141,13 +141,33 @@ def do_logout(user):
     # host = request.get_host()
     protocol = 'https'
     host = 'e-democracia.ufsc.br'
-    next_page = get_redirect_url()
     redirect_url = urllib_parse.urlunparse(
-        (protocol, host, next_page, '', '', ''),
+        (protocol, host, '', '', '', ''),
     )
 
-    client = get_cas_client()
+    client = get_cas_client(service_url=get_service_url())
     return HttpResponseRedirect(client.get_logout_url(redirect_url))
+
+def get_user_info_after_auth(request):
+    ticket = request.GET.get('ticket', None)
+
+    # if no ticket, this is a logout
+    if not ticket:
+        return None
+
+    service = get_service_url(request) #, resolve_url(settings.CAS_REDIRECT_URL))
+    client = get_cas_client(service_url=service, request=request)
+    username, attributes, pgtiou = client.verify_ticket(ticket)
+    if attributes and request:
+        request.session['attributes'] = attributes
+
+    user_info = None
+    if user_info:
+        info = {'name': user_info['name'], 'category': category}
+    else:
+        info = {'name': netid, 'category': category}
+
+    return {'user_id': netid, 'name': info['name'], 'info': info, 'token': None}
 
 
 def update_status(token, message):
