@@ -7,6 +7,7 @@ Ben Adida
 
 from django.http import *
 from django.core.urlresolvers import reverse
+from django.utils.six.moves import urllib_parse
 
 from view_utils import *
 from helios_auth.security import get_user
@@ -144,7 +145,9 @@ def _do_auth(request):
   system = AUTH_SYSTEMS[system_name]
   
   # where to send the user to?
-  redirect_url = "%s%s" % (settings.SECURE_URL_HOST,reverse(after))
+  redirect_url = urllib_parse.urlunparse(
+    (request.scheme, request.get_host(), reverse(after), '', '', ''),
+  )
   auth_url = system.get_auth_url(request, redirect_url=redirect_url)
   
   if auth_url:

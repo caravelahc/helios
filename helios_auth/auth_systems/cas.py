@@ -129,8 +129,7 @@ def get_cas_client(service_url=None, request=None):
 
 
 def get_auth_url(request, redirect_url):
-    service_url = get_service_url(request, redirect_url)
-    client = get_cas_client(service_url=service_url, request=request)
+    client = get_cas_client(redirect_url, request)
     return client.get_login_url()
 
 
