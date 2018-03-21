@@ -133,20 +133,20 @@ def get_auth_url(request, redirect_url):
     return client.get_login_url()
 
 
-def do_logout(user):
+def do_logout(user, request):
     """
     Perform logout of CAS by redirecting to the CAS logout URL
     """
-    # protocol = get_protocol(request)
-    # host = request.get_host()
-    protocol = 'https'
-    host = 'e-democracia.ufsc.br'
+    protocol = get_protocol(request)
+    host = request.get_host()
     redirect_url = urllib_parse.urlunparse(
         (protocol, host, '', '', '', ''),
     )
 
-    client = get_cas_client(service_url=get_service_url())
+    service = get_service_url(request)
+    client = get_cas_client(service_url=service)
     return HttpResponseRedirect(client.get_logout_url(redirect_url))
+
 
 def get_user_info_after_auth(request):
     ticket = request.GET.get('ticket', None)

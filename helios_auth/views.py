@@ -114,7 +114,7 @@ def do_remote_logout(request, user, return_url="/"):
   user_for_remote_logout = request.session.get('user_for_remote_logout', None)
   del request.session['user_for_remote_logout']
   if hasattr(auth_system, 'do_logout'):
-    response = auth_system.do_logout(user_for_remote_logout)
+    response = auth_system.do_logout(user_for_remote_logout, request=request)
     return response
 
 def do_complete_logout(request, return_url="/"):
