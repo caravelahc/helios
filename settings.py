@@ -247,7 +247,7 @@ HELIOS_PRIVATE_DEFAULT = False
 
 # authentication systems enabled
 #AUTH_ENABLED_AUTH_SYSTEMS = ['password','facebook','twitter', 'google', 'yahoo']
-AUTH_ENABLED_AUTH_SYSTEMS = get_from_env('AUTH_ENABLED_AUTH_SYSTEMS', 'password').split(",")
+AUTH_ENABLED_AUTH_SYSTEMS = get_from_env('AUTH_ENABLED_AUTH_SYSTEMS', 'cas').split(",")
 AUTH_DEFAULT_AUTH_SYSTEM = get_from_env('AUTH_DEFAULT_AUTH_SYSTEM', None)
 
 # google
@@ -273,10 +273,9 @@ LINKEDIN_API_KEY = ''
 LINKEDIN_API_SECRET = ''
 
 # CAS (for universities)
-CAS_USERNAME = get_from_env('CAS_USERNAME', "")
-CAS_PASSWORD = get_from_env('CAS_PASSWORD', "")
-CAS_ELIGIBILITY_URL = get_from_env('CAS_ELIGIBILITY_URL', "")
-CAS_ELIGIBILITY_REALM = get_from_env('CAS_ELIGIBILITY_REALM', "")
+CAS_SERVER_URL = 'https://sistemas.ufsc.br/'
+CAS_USERNAME_ATTRIBUTE = 'idPessoa'
+CAS_VERSION = 'CAS_2_SAML_1_0'
 
 # Clever
 CLEVER_CLIENT_ID = get_from_env('CLEVER_CLIENT_ID', "")
