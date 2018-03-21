@@ -155,19 +155,22 @@ def get_user_info_after_auth(request):
     if not ticket:
         return None
 
-    service = get_service_url(request) #, resolve_url(settings.CAS_REDIRECT_URL))
+    service = get_service_url(request)
     client = get_cas_client(service_url=service, request=request)
     username, attributes, pgtiou = client.verify_ticket(ticket)
     if attributes and request:
         request.session['attributes'] = attributes
 
-    user_info = None
-    if user_info:
-        info = {'name': user_info['name'], 'category': category}
-    else:
-        info = {'name': netid, 'category': category}
-
-    return {'user_id': netid, 'name': info['name'], 'info': info, 'token': None}
+    return {
+        'user_id': attributes['uid'],
+        'name': attributes['personName'],
+        'info': {
+            'name': attributes['personName'],
+            'category': attributes['tipoAcessoLogin'],
+        },
+        'token': None,
+        'type': 'cas',
+    }
 
 
 def update_status(token, message):
