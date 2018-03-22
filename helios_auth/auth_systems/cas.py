@@ -162,11 +162,11 @@ def get_user_info_after_auth(request):
         request.session['attributes'] = attributes
 
     return {
-        'user_id': attributes['uid'],
+        'user_id': attributes['login'],
         'name': attributes['personName'],
         'info': {
             'name': attributes['personName'],
-            'category': attributes['tipoAcessoLogin'],
+            'category': attributes['userType'],
         },
         'token': None,
         'type': 'cas',
