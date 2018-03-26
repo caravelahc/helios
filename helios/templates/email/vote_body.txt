@@ -8,7 +8,7 @@ Código de Identificação da Eleição: {{voter.election.hash}}
 Seu ID de eleitor: {{voter.voter_login_id}}
 Sua senha para essa eleição: {{voter.voter_password}}
 {% else %}
-Conecte-se com seu usuário e senha dos sistemas do IFSC.
+Conecte-se com seu usuário e senha dos sistemas da UFSC.
 {% endifequal %}{% if voter.vote_hash %}
 O seu voto foi registrado com o seguinte código de identificação:
 
