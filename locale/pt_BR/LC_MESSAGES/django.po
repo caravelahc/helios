@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: helios-ifsc\n"
+"Project-Id-Version: helios-CTC/UFSC\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-21 12:51-0200\n"
+"POT-Creation-Date: 2018-03-26 15:30-0300\n"
 "PO-Revision-Date: 2016-01-22 12:21-0300\n"
 "Last-Translator: Shirlei Chaves <shirlei@gmail.com>\n"
 "Language-Team: \n"
@@ -17,6 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.4\n"
+
+#: djcelery/templates/admin/djcelery/change_list.html:7
+#: djcelery/templates/djcelery/confirm_rate_limit.html:6
+#: heliosinstitution/templates/navbar-bootstrap.html:14
+#: server_ui/templates/navbar.html:8
+msgid "Home"
+msgstr "Início"
+
+#: djcelery/templates/djcelery/confirm_rate_limit.html:9
+#: lib/python2.7/site-packages/djcelery/admin.py:174
+msgid "Rate limit selected tasks"
+msgstr ""
+
+#: djcelery/templates/djcelery/confirm_rate_limit.html:22
+msgid "Rate limit"
+msgstr ""
 
 #: helios/forms.py:14
 msgid "Short name"
@@ -292,7 +308,7 @@ msgstr "Votar"
 #: helios_auth/templates/login_box.html:11
 #: helios_auth/templates/password/login.html:4
 #: helios_auth/templates/password/login.html:23
-#: server_ui/templates/navbar.html:23
+#: server_ui/templates/navbar.html:25
 msgid "Login"
 msgstr "Conectar"
 
@@ -487,16 +503,14 @@ msgstr ""
 "  Este é o centro de rastreamento de cédulas,  o qual mostra os números de "
 "rastreamento  de todas as cédulas lançadas nesta eleição. \n"
 
-#: helios/templates/election_bboard.html:18
-#: helios/templates/voters_list.html:3 helios/templates/voters_list.html:138
-#: helios/templates/voters_list.html:192
+#: helios/templates/election_bboard.html:18 helios/templates/voters_list.html:3
+#: helios/templates/voters_list.html:138 helios/templates/voters_list.html:192
 msgid "Voters"
 msgstr "Eleitores"
 
 #: helios/templates/election_bboard.html:34
 #: helios/templates/voters_list.html:115 helios/templates/voters_list.html:149
-#: helios/templates/voters_list.html:154
-#: helios/templates/voters_manage.html:29
+#: helios/templates/voters_list.html:154 helios/templates/voters_manage.html:29
 msgid "Alias"
 msgstr "Pseudônimo"
 
@@ -637,8 +651,7 @@ msgstr ""
 msgid "Update"
 msgstr "Atualizar"
 
-#: helios/templates/election_edit.html:24
-#: helios/templates/election_new.html:23
+#: helios/templates/election_edit.html:24 helios/templates/election_new.html:23
 msgid "Next"
 msgstr "Próximo"
 
@@ -1020,8 +1033,7 @@ msgstr "Você <em>não está apto</em> a votar nesta"
 msgid "This election is open to:"
 msgstr "Quem pode votar nessa eleição:"
 
-#: helios/templates/election_view.html:69
-#: helios/templates/voters_list.html:102
+#: helios/templates/election_view.html:69 helios/templates/voters_list.html:102
 msgid "Any user with credentials"
 msgstr "Qualquer eleitor que possa se conectar no sistema."
 
@@ -1046,6 +1058,8 @@ msgid "Next Step:"
 msgstr "O que você ainda precisa fazer:"
 
 #: helios/templates/election_view.html:130
+#: lib/python2.7/site-packages/django/db/models/base.py:971
+#: lib/python2.7/site-packages/django/forms/models.py:716
 msgid "and"
 msgstr "  "
 
@@ -1311,8 +1325,8 @@ msgstr ""
 "automaticamente seu primeiro apurador e irá tratar da geração de chaves e "
 "desencriptação automaticamente.<br />\n"
 "  Se você cadastrar apuradores adicionais, você pode remover o Helios como "
-"apurador, clicando no botão de excluir da opção \"Sistema de Votação Online "
-"do IFSC\" na listagem de apuradores abaixo.<br />\n"
+"apurador, clicando no botão de excluir da opção \"Sistema de Eleição Online "
+"do CTC/UFSC\" na listagem de apuradores abaixo.<br />\n"
 
 #: helios/templates/list_trustees.html:32
 msgid "add a trustee"
@@ -1474,11 +1488,16 @@ msgstr "votos recentes"
 msgid "recent problem elections"
 msgstr "eleições problemáticas recentes"
 
-#: helios/templates/stats.html:13 heliosinstitution/templates/stats.html:11
+#: helios/templates/stats.html:11
+#: heliosinstitution/templates/stats_admin_actions.html:6
+msgid "Admin actions"
+msgstr "Ações Administrativas"
+
+#: helios/templates/stats.html:14 heliosinstitution/templates/stats.html:11
 msgid "votes in queue."
 msgstr "votos na fila."
 
-#: helios/templates/stats.html:13 heliosinstitution/templates/stats.html:11
+#: helios/templates/stats.html:14 heliosinstitution/templates/stats.html:11
 msgid "force it"
 msgstr "forçar"
 
@@ -2247,15 +2266,26 @@ msgstr "Resultado da Eleição"
 msgid "bad template"
 msgstr "template inválido"
 
+#: helios_auth/auth_systems/cas.py:34
+#, python-format
+msgid "Login succeeded. Welcome, %s."
+msgstr ""
+
+#: helios_auth/auth_systems/cas.py:35
+#, fuzzy, python-format
+#| msgid "You are logged in as"
+msgid "You are logged in as %s."
+msgstr "Você está conectado como "
+
 #: helios_auth/auth_systems/shibboleth.py:25
 msgid "Click here to login"
 msgstr "Clique aqui para se conectar"
 
-#: helios_auth/auth_systems/shibboleth.py:66
+#: helios_auth/auth_systems/shibboleth.py:65
 msgid "Bad Username or Password"
 msgstr "Usuário ou Senha Incorretos"
 
-#: helios_auth/auth_systems/shibboleth.py:122
+#: helios_auth/auth_systems/shibboleth.py:121
 msgid "Users with the following attributes:"
 msgstr "Eleitores com os seguintes atributos:"
 
@@ -2442,31 +2472,31 @@ msgstr "Permissões"
 msgid "You don't have permission to access this view"
 msgstr "Você não tem permissão para acessar essa view"
 
-#: heliosinstitution/models.py:136
+#: heliosinstitution/models.py:142
 msgid "Can delegate institution management tasks"
 msgstr "Pode delegar tarefas de gestão da instituição"
 
-#: heliosinstitution/models.py:137
+#: heliosinstitution/models.py:143
 msgid "Can revoke institution management tasks"
 msgstr "Pode revogar tarefas de gestão da instituição"
 
-#: heliosinstitution/models.py:138
+#: heliosinstitution/models.py:144
 msgid "Can delegate election management tasks"
 msgstr "Pode delegar tarefas de gestão de eleição"
 
-#: heliosinstitution/models.py:139
+#: heliosinstitution/models.py:145
 msgid "Can revoke election management tasks"
 msgstr "Pode revogar tarefas de gestão de eleição"
 
-#: heliosinstitution/models.py:153
+#: heliosinstitution/models.py:159
 msgid "Institution Admin"
 msgstr "Gestor da Instituição"
 
-#: heliosinstitution/models.py:155
+#: heliosinstitution/models.py:161
 msgid "Election Admin"
 msgstr "Gestor de Eleição"
 
-#: heliosinstitution/models.py:156
+#: heliosinstitution/models.py:162
 msgid "Undefined"
 msgstr "Indefinido"
 
@@ -2624,10 +2654,12 @@ msgid "Expires at"
 msgstr "Expira em"
 
 #: heliosinstitution/templates/institution_users.html:24
+#: lib/python2.7/site-packages/django/forms/widgets.py:547
 msgid "Yes"
 msgstr "Sim"
 
 #: heliosinstitution/templates/institution_users.html:24
+#: lib/python2.7/site-packages/django/forms/widgets.py:548
 msgid "No"
 msgstr "Não"
 
@@ -2661,6 +2693,7 @@ msgstr "Delegar Gestor da Instituição"
 
 #: heliosinstitution/templates/manage_users.html:11
 #: heliosinstitution/templates/manage_users.html:23
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1453
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
@@ -2678,28 +2711,20 @@ msgstr "Adicionar"
 msgid "Add new Election Admin"
 msgstr "Adicionar novo Gestor de Eleição"
 
-#: heliosinstitution/templates/navbar-bootstrap.html:15
-#: server_ui/templates/navbar.html:9
-msgid "Home"
-msgstr "Início"
-
 #: heliosinstitution/templates/navbar-bootstrap.html:24
-#: server_ui/templates/navbar.html:18
+#: server_ui/templates/navbar.html:20
 msgid "Logout"
 msgstr "Desconectar"
 
 #: heliosinstitution/templates/navbar-bootstrap.html:29
-#: server_ui/templates/navbar.html:23
+#: server_ui/templates/navbar.html:25
 msgid "Federated Access"
 msgstr "Acesso Federado"
 
 #: heliosinstitution/templates/navbar-bootstrap.html:33
+#: server_ui/templates/navbar.html:29
 msgid "Help"
 msgstr "Ajuda"
-
-#: heliosinstitution/templates/stats_admin_actions.html:6
-msgid "Admin actions"
-msgstr "Ações Administrativas"
 
 #: heliosinstitution/templates/stats_elections.html:3
 msgid "All Elections"
@@ -2766,6 +2791,7 @@ msgid "Institution does not exist"
 msgstr "A instituição não existe"
 
 #: helioslog/models.py:18
+#: lib/python2.7/site-packages/django/forms/formsets.py:371
 msgid "Delete"
 msgstr "Apagar"
 
@@ -2776,6 +2802,1690 @@ msgstr "Modificar"
 #: helioslog/models.py:26
 msgid " object of "
 msgstr " objeto de "
+
+#: lib/python2.7/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/contrib/staticfiles/apps.py:8
+#, fuzzy
+#| msgid "Statistics"
+msgid "Static Files"
+msgstr "Estatísticas"
+
+#: lib/python2.7/site-packages/django/contrib/syndication/apps.py:8
+#, fuzzy
+#| msgid "Authentication"
+msgid "Syndication"
+msgstr "Autenticação"
+
+#: lib/python2.7/site-packages/django/contrib/webdesign/apps.py:8
+msgid "Web Design"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:21
+msgid "Enter a valid value."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:77
+#: lib/python2.7/site-packages/django/forms/fields.py:664
+msgid "Enter a valid URL."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:112
+msgid "Enter a valid integer."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:123
+#, fuzzy
+#| msgid "Email address"
+msgid "Enter a valid email address."
+msgstr "Endereço de e-mail"
+
+#: lib/python2.7/site-packages/django/core/validators.py:188
+msgid ""
+"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:191
+#: lib/python2.7/site-packages/django/core/validators.py:210
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:196
+#: lib/python2.7/site-packages/django/core/validators.py:211
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:206
+#: lib/python2.7/site-packages/django/core/validators.py:209
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:232
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1075
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:239
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:258
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:265
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:274
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:285
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/db/models/base.py:973
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:104
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:105
+msgid "This field cannot be null."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:106
+msgid "This field cannot be blank."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:107
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:111
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:118
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:852
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1582
+msgid "Integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:856
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1580
+#, python-format
+msgid "'%(value)s' value must be an integer."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:931
+#, python-format
+msgid "'%(value)s' value must be either True or False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:933
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1009
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1070
+msgid "Comma-separated integers"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1085
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1087
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1194
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1090
+msgid "Date (without time)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1192
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1196
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1200
+msgid "Date (with time)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1306
+#, python-format
+msgid "'%(value)s' value must be a decimal number."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1308
+msgid "Decimal number"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1479
+msgid "File path"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1546
+#, python-format
+msgid "'%(value)s' value must be a float."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1548
+msgid "Floating point number"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1632
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1647
+#, fuzzy
+#| msgid "Email address"
+msgid "IPv4 address"
+msgstr "Endereço de e-mail"
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1677
+#, fuzzy
+#| msgid "Email address"
+msgid "IP address"
+msgstr "Endereço de e-mail"
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1756
+#, python-format
+msgid "'%(value)s' value must be either None, True or False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1758
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1818
+msgid "Positive integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1830
+msgid "Positive small integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1843
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1872
+#, fuzzy
+#| msgid "all voters"
+msgid "Small integer"
+msgstr "todos os eleitores"
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1879
+msgid "Text"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1902
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1904
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1907
+msgid "Time"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1989
+msgid "URL"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2012
+msgid "Raw binary data"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/files.py:225
+msgid "File"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/files.py:375
+msgid "Image"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:1606
+#, python-format
+msgid "%(model)s instance with pk %(pk)r does not exist."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:1608
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:1798
+msgid "One-to-one relationship"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:1868
+msgid "Many-to-many relationship"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:55
+msgid "This field is required."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:225
+msgid "Enter a whole number."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:268
+#: lib/python2.7/site-packages/django/forms/fields.py:305
+msgid "Enter a number."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:307
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:311
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:315
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:426
+#: lib/python2.7/site-packages/django/forms/fields.py:1132
+msgid "Enter a valid date."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:450
+#: lib/python2.7/site-packages/django/forms/fields.py:1133
+msgid "Enter a valid time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:472
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:553
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:554
+msgid "No file was submitted."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:555
+msgid "The submitted file is empty."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:557
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:560
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:621
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:771
+#: lib/python2.7/site-packages/django/forms/fields.py:860
+#: lib/python2.7/site-packages/django/forms/models.py:1205
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:861
+#: lib/python2.7/site-packages/django/forms/fields.py:976
+#: lib/python2.7/site-packages/django/forms/models.py:1204
+#, fuzzy
+#| msgid "view the list of voters"
+msgid "Enter a list of values."
+msgstr "visualizar a lista de eleitores"
+
+#: lib/python2.7/site-packages/django/forms/fields.py:977
+msgid "Enter a complete value."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: lib/python2.7/site-packages/django/forms/forms.py:122
+msgid ":"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/forms.py:192
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: lib/python2.7/site-packages/django/forms/forms.py:620
+msgid ":?.!"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:95
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:332
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:339
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:367
+#: lib/python2.7/site-packages/django/forms/formsets.py:369
+msgid "Order"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:710
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:714
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:720
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:728
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1030
+msgid "The inline foreign key did not match the parent instance primary key."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1096
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1207
+#, python-format
+msgid "\"%(pk)s\" is not a valid value for a primary key."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1218
+msgid ""
+"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/utils.py:157
+#, python-format
+msgid ""
+"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:350
+msgid "Currently"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:351
+msgid "Change"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:352
+msgid "Clear"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:546
+msgid "Unknown"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:855
+msgid "yes,no,maybe"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:884
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:896
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:898
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:900
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:902
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:904
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:906
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:59
+msgid "p.m."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:60
+msgid "a.m."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:65
+msgid "PM"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:66
+msgid "AM"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:149
+msgid "midnight"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:151
+msgid "noon"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+#, fuzzy
+#| msgid "Trustee"
+msgid "Tue"
+msgstr "Apurador"
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:11
+#, fuzzy
+#| msgid "Start"
+msgid "Sat"
+msgstr "Início"
+
+#: lib/python2.7/site-packages/django/utils/dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "January"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "February"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+#, fuzzy
+#| msgid "search"
+msgid "March"
+msgstr "buscar"
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "April"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "May"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "June"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "July"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "August"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "September"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "October"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "November"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:20
+msgid "December"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+#, fuzzy
+#| msgid "and"
+msgid "jan"
+msgstr "  "
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "feb"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "mar"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "apr"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "may"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "jun"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "jul"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "aug"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "sep"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "oct"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "nov"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "dec"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:33
+#, fuzzy
+#| msgid "search"
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "buscar"
+
+#: lib/python2.7/site-packages/django/utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:35
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:36
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:37
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:38
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:39
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:40
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:41
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:42
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:45
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:46
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:47
+#, fuzzy
+#| msgid "search"
+msgctxt "alt. month"
+msgid "March"
+msgstr "buscar"
+
+#: lib/python2.7/site-packages/django/utils/dates.py:48
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:49
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:50
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:51
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:52
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:53
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:54
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:55
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:56
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/ipv6.py:10
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s..."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/text.py:245
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: lib/python2.7/site-packages/django/utils/text.py:264
+#: lib/python2.7/site-packages/django/utils/timesince.py:57
+msgid ", "
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:25
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:26
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:27
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:28
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:29
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:30
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:46
+msgid "0 minutes"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:105
+msgid "Forbidden"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:106
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:110
+msgid ""
+"You are seeing this message because this HTTPS site requires a 'Referer "
+"header' to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:115
+msgid ""
+"If you have configured your browser to disable 'Referer' headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for 'same-"
+"origin' requests."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:120
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:125
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for 'same-origin' requests."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:129
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:43
+msgid "No year specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:99
+msgid "No month specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:158
+msgid "No day specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:214
+msgid "No week specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:369
+#: lib/python2.7/site-packages/django/views/generic/dates.py:397
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:650
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:682
+#, python-format
+msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/detail.py:54
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/list.py:62
+msgid "Page is not 'last', nor can it be converted to an int."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/list.py:67
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/list.py:158
+#, python-format
+msgid "Empty list and '%(class_name)s.allow_empty' is False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/static.py:54
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/static.py:56
+#, fuzzy, python-format
+#| msgid "Institution does not exist"
+msgid "\"%(path)s\" does not exist"
+msgstr "A instituição não existe"
+
+#: lib/python2.7/site-packages/django/views/static.py:96
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:53
+#: lib/python2.7/site-packages/djcelery/admin.py:60
+#: lib/python2.7/site-packages/djcelery/models.py:30
+#: lib/python2.7/site-packages/djcelery/models.py:329
+msgid "state"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:67
+#: lib/python2.7/site-packages/djcelery/models.py:338
+msgid "ETA"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:74
+msgid "when"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:81
+#: lib/python2.7/site-packages/djcelery/models.py:205
+#: lib/python2.7/site-packages/djcelery/models.py:333
+#: lib/python2.7/site-packages/kombu/transport/django/models.py:12
+#, fuzzy
+msgid "name"
+msgstr "Nome de usuário"
+
+#: lib/python2.7/site-packages/djcelery/admin.py:115
+#, fuzzy
+#| msgid "User details"
+msgid "Task detail"
+msgstr "Detalhes do Usuário"
+
+#: lib/python2.7/site-packages/djcelery/admin.py:116
+msgid "Tasks"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:131
+#: lib/python2.7/site-packages/djcelery/models.py:331
+msgid "UUID"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:155
+#, fuzzy
+#| msgid "Can revoke election management tasks"
+msgid "Revoke selected tasks"
+msgstr "Pode revogar tarefas de gestão de eleição"
+
+#: lib/python2.7/site-packages/djcelery/admin.py:161
+msgid "Terminate selected tasks"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:167
+msgid "Kill selected tasks"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:187
+#, fuzzy
+#| msgid "create election"
+msgid "Rate limit selection"
+msgstr "criar eleição"
+
+#: lib/python2.7/site-packages/djcelery/admin.py:212
+#, fuzzy
+#| msgid "User details"
+msgid "Node detail"
+msgstr "Detalhes do Usuário"
+
+#: lib/python2.7/site-packages/djcelery/admin.py:213
+msgid "Worker Nodes"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:220
+msgid "Shutdown selected worker nodes"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:224
+msgid "Enable event mode for selected nodes."
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:229
+msgid "Disable event mode for selected nodes."
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:281
+#, fuzzy
+#| msgid "register!"
+msgid "Task (registered)"
+msgstr "registrar!"
+
+#: lib/python2.7/site-packages/djcelery/admin.py:283
+msgid "Task (custom)"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:296
+msgid "Need name of task"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/admin.py:307
+#, python-format
+msgid "Unable to parse JSON: %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:10
+#, python-brace-format
+msgid "{num} year ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:10
+#, python-brace-format
+msgid "{num} years ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:14
+#, python-brace-format
+msgid "{num} month ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:14
+#, python-brace-format
+msgid "{num} months ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:18
+#, python-brace-format
+msgid "{num} week ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:18
+#, python-brace-format
+msgid "{num} weeks ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:22
+#, python-brace-format
+msgid "{num} day ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:22
+#, python-brace-format
+msgid "{num} days ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:56
+#: lib/python2.7/site-packages/djcelery/humanize.py:71
+msgid "just now"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:62
+#, python-brace-format
+msgid "{minutes} minute ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:63
+#, python-brace-format
+msgid "{minutes} minutes ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:68
+#, python-brace-format
+msgid "{seconds} second ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:69
+#, python-brace-format
+msgid "{seconds} seconds ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:74
+#, python-brace-format
+msgid "{hours} hour ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:74
+#, python-brace-format
+msgid "{hours} hours ago"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/humanize.py:78
+#, python-brace-format
+msgid "yesterday at {time}"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:28
+msgid "task id"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:34
+#, fuzzy
+#| msgid "none yet"
+msgid "done at"
+msgstr "nada ainda"
+
+#: lib/python2.7/site-packages/djcelery/models.py:35
+#: lib/python2.7/site-packages/djcelery/models.py:341
+msgid "traceback"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:46
+#, fuzzy
+#| msgid "back to start"
+msgid "task state"
+msgstr "voltar ao início"
+
+#: lib/python2.7/site-packages/djcelery/models.py:47
+msgid "task states"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:65
+msgid "group id"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:67
+#, fuzzy
+#| msgid "created by"
+msgid "created at"
+msgstr "criado(a) por"
+
+#: lib/python2.7/site-packages/djcelery/models.py:74
+msgid "saved group result"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:75
+msgid "saved group results"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:87
+msgid "Days"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:88
+msgid "Hours"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:89
+msgid "Minutes"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:90
+msgid "Seconds"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:91
+msgid "Microseconds"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:96
+msgid "every"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:98
+msgid "period"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:102
+#: lib/python2.7/site-packages/djcelery/models.py:211
+#, fuzzy
+#| msgid "Enter email"
+msgid "interval"
+msgstr "Informar e-mail"
+
+#: lib/python2.7/site-packages/djcelery/models.py:103
+#, fuzzy
+#| msgid "Enter email"
+msgid "intervals"
+msgstr "Informar e-mail"
+
+#: lib/python2.7/site-packages/djcelery/models.py:123
+#, python-brace-format
+msgid "every {0.period_singular}"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:124
+#, python-brace-format
+msgid "every {0.every} {0.period}"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:133
+msgid "minute"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:134
+msgid "hour"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:136
+msgid "day of week"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:139
+msgid "day of month"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:142
+msgid "month of year"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:146
+#: lib/python2.7/site-packages/djcelery/models.py:214
+msgid "crontab"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:147
+msgid "crontabs"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:206
+#, fuzzy
+#| msgid "Description"
+msgid "Useful description"
+msgstr "Descrição"
+
+#: lib/python2.7/site-packages/djcelery/models.py:208
+#, fuzzy
+#| msgid "Short name"
+msgid "task name"
+msgstr "Nome abreviado"
+
+#: lib/python2.7/site-packages/djcelery/models.py:215
+msgid "Use one of interval/crontab"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:218
+#: lib/python2.7/site-packages/djcelery/models.py:336
+msgid "Arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:219
+msgid "JSON encoded positional arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:222
+#: lib/python2.7/site-packages/djcelery/models.py:337
+msgid "Keyword arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:223
+msgid "JSON encoded keyword arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:226
+#: lib/python2.7/site-packages/kombu/transport/django/models.py:20
+msgid "queue"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:227
+msgid "Queue defined in CELERY_QUEUES"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:230
+msgid "exchange"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:233
+msgid "routing key"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:236
+#: lib/python2.7/site-packages/djcelery/models.py:339
+#, fuzzy
+#| msgid "Expires at"
+msgid "expires"
+msgstr "Expira em"
+
+#: lib/python2.7/site-packages/djcelery/models.py:239
+msgid "enabled"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:249
+#, fuzzy
+#| msgid "Description"
+msgid "description"
+msgstr "Descrição"
+
+#: lib/python2.7/site-packages/djcelery/models.py:255
+msgid "periodic task"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:256
+msgid "periodic tasks"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:295
+#, fuzzy
+#| msgid "Short name"
+msgid "hostname"
+msgstr "Nome abreviado"
+
+#: lib/python2.7/site-packages/djcelery/models.py:296
+msgid "last heartbeat"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:303
+#: lib/python2.7/site-packages/djcelery/models.py:348
+msgid "worker"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:304
+msgid "workers"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:335
+msgid "event received at"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:340
+#, fuzzy
+#| msgid "release result"
+msgid "result"
+msgstr "liberar o resultado"
+
+#: lib/python2.7/site-packages/djcelery/models.py:343
+#, fuzzy
+#| msgid "Election type"
+msgid "execution time"
+msgstr "Tipo da eleição"
+
+#: lib/python2.7/site-packages/djcelery/models.py:344
+msgid "in seconds if task succeeded"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:346
+msgid "number of retries"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:356
+msgid "task"
+msgstr ""
+
+#: lib/python2.7/site-packages/djcelery/models.py:357
+msgid "tasks"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:313
+msgid "usage: "
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:821
+msgid ".__call__() not defined"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1105
+#, python-format
+msgid "unknown parser %r (choices: %s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1146
+#, python-format
+msgid "argument \"-\" with mode %r"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1349
+#, python-format
+msgid "cannot merge actions - two groups are named %r"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1387
+msgid "'required' is an invalid argument for positionals"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1407
+#, python-format
+msgid "invalid option string %r: must start with a character %r"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1428
+#, fuzzy, python-format
+#| msgid "Cookies are required for Helios use"
+msgid "dest= is required for options like %r"
+msgstr "Cookies são necessários para o uso do Helios"
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1445
+#, python-format
+msgid "invalid conflict_resolution value: %r"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1463
+#, python-format
+msgid "conflicting option string(s): %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1526
+msgid "mutually exclusive arguments must be optional"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1596
+msgid "positional arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1597
+msgid "optional arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1615
+msgid "show this help message and exit"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1621
+msgid "show program's version number and exit"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1653
+msgid "cannot have multiple subparser arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1705
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1802
+#, python-format
+msgid "not allowed with argument %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1848
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1862
+#, python-format
+msgid "ignored explicit argument %r"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1952
+msgid "too few arguments"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1959
+#, python-format
+msgid "argument %s is required"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:1973
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2019
+msgid "expected one argument"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2020
+msgid "expected at most one argument"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2021
+#, fuzzy
+#| msgid "add at least one trustee"
+msgid "expected at least one argument"
+msgstr "adicionar ao menos um apurador"
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2023
+#, python-format
+msgid "expected %s argument(s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2080
+#, python-format
+msgid "ambiguous option: %s could match %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2142
+#, python-format
+msgid "unexpected option string: %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2243
+#, python-format
+msgid "%r is not callable"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2259
+#, python-format
+msgid "invalid %s value: %r"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2269
+#, python-format
+msgid "invalid choice: %r (choose from %s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/gunicorn/argparse_compat.py:2362
+#, python-format
+msgid "%s: error: %s\n"
+msgstr ""
+
+#: lib/python2.7/site-packages/httplib2/__init__.py:436
+#, python-format
+msgid "Content purported to be compressed with %s but failed to decompress."
+msgstr ""
+
+#: lib/python2.7/site-packages/httplib2/__init__.py:546
+#, python-format
+msgid "Unsupported value for qop: %s."
+msgstr ""
+
+#: lib/python2.7/site-packages/httplib2/__init__.py:549
+#: lib/python2.7/site-packages/httplib2/__init__.py:611
+#, python-format
+msgid "Unsupported value for algorithm: %s."
+msgstr ""
+
+#: lib/python2.7/site-packages/httplib2/__init__.py:608
+msgid "The challenge doesn't contain a server nonce, or this one is empty."
+msgstr ""
+
+#: lib/python2.7/site-packages/httplib2/__init__.py:614
+#, python-format
+msgid "Unsupported value for pw-algorithm: %s."
+msgstr ""
+
+#: lib/python2.7/site-packages/httplib2/__init__.py:1422
+msgid "Redirected but the response is missing a Location: header."
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/django/models.py:21
+msgid "queues"
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/django/models.py:28
+msgid "payload"
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/django/models.py:37
+msgid "message"
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/django/models.py:38
+msgid "messages"
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/qpid.py:1272
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/qpid.py:1277
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: lib/python2.7/site-packages/kombu/transport/qpid.py:1295
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
 
 #: server_ui/glue.py:17
 #, python-format
@@ -2821,7 +4531,7 @@ msgstr ""
 
 #: server_ui/templates/about.html:12
 msgid "About Helios Voting"
-msgstr "Sobre o Sistema de Votação Helios"
+msgstr "Sobre o Sistema de Eleição Helios"
 
 #: server_ui/templates/about.html:15
 msgid "Helios is a non-partisan organization led by"
@@ -3231,21 +4941,25 @@ msgid ""
 "</ul>\n"
 msgstr ""
 
-#: settings.py:83
+#: settings.py:84
 msgid "English"
 msgstr "Inglês"
 
-#: settings.py:84
+#: settings.py:85
 msgid "Brazilian Portuguese"
 msgstr "Português Brasileiro"
 
-#: settings.py:226
-msgid "IFSC E-Voting System"
-msgstr "Sistema de Votação Online do IFSC"
+#: settings.py:228
+#, fuzzy
+#| msgid "CTC/UFSC E-Voting System"
+msgid "UFSC E-Voting System"
+msgstr "Sistema de Eleição Online do CTC/UFSC"
 
-#: settings.py:234
-msgid "Welcome to IFSC E-Voting System"
-msgstr "Bem Vindo ao Sistema de Votação Online do IFSC"
+#: settings.py:236
+#, fuzzy
+#| msgid "Welcome to CTC/UFSC E-Voting System"
+msgid "Welcome to UFSC E-Voting System"
+msgstr "Bem Vindo ao Sistema de Eleição Online do CTC/UFSC"
 
 #: templates/403.html:3
 msgid "Could not complete your request"
@@ -3529,10 +5243,6 @@ msgstr "Houve um erro durante o processamento de sua requisição."
 
 #~ msgid "type"
 #~ msgstr "tipo"
-
-#, fuzzy
-#~ msgid "name"
-#~ msgstr "Nome de usuário"
 
 #, fuzzy
 #~ msgid ""
