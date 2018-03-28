@@ -13,6 +13,7 @@ from django.core.exceptions import PermissionDenied
 from django.http import *
 from django.db import transaction, IntegrityError
 from django.utils.datastructures import MultiValueDictKeyError
+from django.utils.six.moves import urllib_parse
 from django.utils.translation import ugettext as _
 
 from mimetypes import guess_type
@@ -61,16 +62,24 @@ ELGAMAL_PARAMS_LD_OBJECT = datatypes.LDObject.instantiate(ELGAMAL_PARAMS, dataty
 from django.conf import settings
 
 def get_election_url(election):
-  return settings.URL_HOST + reverse(election_shortcut, args=[election.short_name])
+  return urllib_parse.urlunparse(
+      ('https', 'sistemas.ufsc.br', 'login', '', urllib_parse.urlencode({
+          'service': settings.SECURE_URL_HOST + reverse(election_shortcut, args=[election.short_name]),
+      }), '')
+  )
 
 def get_election_badge_url(election):
-  return settings.URL_HOST + reverse(election_badge, args=[election.uuid])
+  return settings.SECURE_URL_HOST + reverse(election_badge, args=[election.uuid])
 
 def get_election_govote_url(election):
-  return settings.URL_HOST + reverse(election_vote_shortcut, args=[election.short_name])
+  return urllib_parse.urlunparse(
+      ('https', 'sistemas.ufsc.br', 'login', '', urllib_parse.urlencode({
+          'service': settings.SECURE_URL_HOST + reverse(election_vote_shortcut, args=[election.short_name]),
+      }), '')
+  )
 
 def get_castvote_url(cast_vote):
-  return settings.URL_HOST + reverse(castvote_shortcut, args=[cast_vote.vote_tinyhash])
+  return settings.SECURE_URL_HOST + reverse(castvote_shortcut, args=[cast_vote.vote_tinyhash])
 
 # social buttons
 def get_socialbuttons_url(url, text):
