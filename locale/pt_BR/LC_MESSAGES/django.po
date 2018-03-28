@@ -279,18 +279,18 @@ msgstr "a votação ainda não está aberta, desculpe-nos."
 #: helios/templates/_castconfirm_password.html:2
 msgid "Please provide the voter ID and password you received by email."
 msgstr ""
-"Por favor, informe o nome de usuário e senha que você recebeu por email."
+"Por favor, informe o ID e validador que você recebeu por email."
 
 #: helios/templates/_castconfirm_password.html:14
 #: helios/templates/_castconfirm_password.html:15
 #: helios_auth/templates/ldapauth/login.html:16
 #: helios_auth/templates/ldapauth/login.html:17
 msgid "Password"
-msgstr "Senha"
+msgstr "Validador"
 
 #: helios/templates/_castconfirm_password.html:20
 msgid "bad voter ID or password, please try again."
-msgstr "Usuário ou senha incorretos, por favor, tente novamente."
+msgstr "ID ou validador incorretos, por favor, tente novamente."
 
 #: helios/templates/_castconfirm_password.html:26
 msgid ""
@@ -577,7 +577,7 @@ msgid ""
 msgstr ""
 "\n"
 "  Para que sua cédula seja realmente depositada na urna, você deve se "
-"conectar com seu usuário e senha, para que possamos verificar se você é um "
+"conectar com seu ID e validador, para que possamos verificar se você é um "
 "eleitor válido nessa eleição.<br /><br />\n"
 "  "
 
@@ -1039,7 +1039,7 @@ msgstr "Qualquer eleitor que possa se conectar no sistema."
 
 #: helios/templates/election_view.html:71
 msgid "Anyone can vote in this election."
-msgstr "Qualquer eleitor que tenha um nome de usuário e senha no sistema."
+msgstr "Qualquer eleitor que tenha um ID e validador no sistema."
 
 #: helios/templates/election_view.html:92
 msgid "questions"
@@ -1072,7 +1072,7 @@ msgid "once you do this, the election will be immediately open for voting."
 msgstr ""
 "Após fazer isso, a eleição será aberta imediatamente para votação. <br /"
 ">ATENÇÃO:  caso você tenha cadastrado uma lista de eleitores, é necessário "
-"enviar email para os mesmos, para que recebam usuário e senha para votação. "
+"enviar email para os mesmos, para que recebam ID e validador para votação. "
 "Sem esses dados, eles não poderão votar."
 
 #: helios/templates/election_view.html:147

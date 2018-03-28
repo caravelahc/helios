@@ -6,7 +6,7 @@ URL da Eleição: {{election_vote_url}}
 Código de Identificação da Eleição: {{voter.election.hash}}
 {% ifequal voter.voter_type "password" %}
 Seu ID de eleitor: {{voter.voter_login_id}}
-Sua senha para essa eleição: {{voter.voter_password}}
+Seu validador para esta eleição: {{voter.voter_password}}
 {% else %}
 Conecte-se com seu usuário e senha dos sistemas da UFSC.
 {% endifequal %}{% if voter.vote_hash %}
